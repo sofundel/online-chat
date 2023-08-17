@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Чат</title>
+    <link rel="stylesheet" href="./view/chat.css">
+</head>
+
+<body>
+    <div class="chat">
+
+        <div class="main-window">
+            <div class="main-buttons">
+                <button class="main-buttons__settings">Настройки</button>
+                <button class="main-buttons__exit">Выйти</button>
+            </div>
+            <div class="scrollable">
+                <div class="message-story">
+                    <template id="messageTemplate">
+                        <div id="messageType">
+                            <div class="message-story__sender"></div>
+                            <div class="message-story__message-text"></div>
+                            <div class="message-story__sending-time"></div>
+                        </div>
+                    </template>
+                </div>
+                
+            </div>
+            <form class="input-message-form">
+                <input type="text" class="input-message-form__message-text" placeholder="Введите сообщение...">
+                <button class="input-message-form__send-button"></button>
+            </form>
+        </div>
+
+        <div class="popup" id="authorizationPopup">
+            <div class="popup-container">
+                <div class="popup-body">
+                    <div class="popup-body__title">Авторизация</div>
+                    <div>
+                        <p class="popup-body__info-type">Почта</p>
+                        <input type="text" class="popup-body__info">
+                    </div>
+                    <div>
+                        <button class="popup-body__left-button">Получить код</button>
+                        <button class="popup-body__right-button">Ввести код</button>
+                    </div>
+                    <div class="popup-body__feedback"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="popup" id="confirmationPopup">
+            <div class="popup-container">
+                <div class="popup-body">
+                    <div class="popup-body__title">Подтверждение</div>
+                    <div>
+                        <p class="popup-body__info-type">Код</p>
+                        <input type="text" class="popup-body__info">
+                    </div>
+                    <div>
+                        <button class="popup-body__left-button">Назад</button>
+                        <button class="popup-body__right-button">Войти</button>
+                    </div>
+                    <div class="popup-body__feedback"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="popup" id="settingsPopup">
+            <div class="popup-container">
+                <div class="popup-body">
+                    <div>
+                        <div class="popup-body__title">Настройки</div>
+                        <button class="popup-body__close-button"></button>
+                    </div>
+                    <div>
+                        <p class="popup-body__info-type">Имя в чате</p>
+                        <input type="text" class="popup-body__info">
+                    </div>
+                    <div>
+                        <button class="popup-body__left-button">Назад</button>
+                        <button class="popup-body__right-button">Сменить</button>
+                    </div>
+                    <div class="popup-body__feedback"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="popup" id="errorPopup">
+            <div class="popup-container">
+                <div class="popup-body">
+                    <div class="popup-body__title">Ошибка</div>
+                    <div class="popup-body__error-message"></div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script type="module" src="./js/chat-main.js"></script>
+
+</body>
+
+</html>
